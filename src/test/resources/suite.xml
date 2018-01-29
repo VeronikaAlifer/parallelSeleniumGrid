@@ -1,0 +1,52 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Suite1" parallel="tests">
+    <test verbose="2" name="Local">
+
+        <parameter name="platform" value="WINDOWS"/>
+        <parameter name="browserName" value="internet explorer"/>
+        <parameter name="remoteUrl" value=" http://localhost:4444/wd/hub"/>
+
+        <classes>
+            <class name="GridParallelTest">
+                <methods>
+                    <include name="googleSearch"/>
+                    <include name="clickExecuteAutomation"/>
+
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!--<test verbose="2" name="LINUX">-->
+
+        <!--<parameter name="platform" value="LINUX"/>-->
+        <!--<parameter name="browserName" value="firefox"/>-->
+        <!--<parameter name="remoteUrl" value=" http://localhost:4444/wd/hub"/>-->
+
+        <!--<classes>-->
+            <!--<class name="GridParallelTest">-->
+                <!--<methods>-->
+                    <!--<include name="googleSearch"/>-->
+                    <!--<include name="clickExecuteAutomation"/>-->
+                <!--</methods>-->
+            <!--</class>-->
+        <!--</classes>-->
+    <!--</test>-->
+    <!--<test verbose="2" name="Remote">-->
+
+        <!--<parameter name="platform" value="Win10"/>-->
+        <!--<parameter name="browserName" value="chrome"/>-->
+        <!--<parameter name="remoteUrl" value="http://10.6.132.40:7799/wd/hub"/>-->
+
+        <!--<classes>-->
+            <!--<class name="GridParallelTest">-->
+                <!--<methods>-->
+                    <!--<include name="googleSearch"/>-->
+                    <!--<include name="clickExecuteAutomation"/>-->
+                <!--</methods>-->
+            <!--</class>-->
+        <!--</classes>-->
+    <!--</test>-->
+
+</suite>
