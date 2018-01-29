@@ -1,6 +1,5 @@
 import org.openqa.selenium.By;
 import org.openqa.selenium.Platform;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.Assert;
@@ -15,7 +14,6 @@ import java.util.concurrent.TimeUnit;
 public class GridParallelTest {
 
     RemoteWebDriver driver;
-    WebElement element;
 
     @BeforeTest
     @Parameters({"platform", "browserName", "remoteUrl"})
@@ -29,8 +27,7 @@ public class GridParallelTest {
         } else if (browserName.equals("internet explorer")) {
             cap = DesiredCapabilities.internetExplorer();
             cap.setBrowserName("internet explorer");
-        }
-        else if (browserName.equals("chrome")) {
+        } else if (browserName.equals("chrome")) {
             cap = DesiredCapabilities.chrome();
             cap.setBrowserName("chrome");
         }
@@ -46,10 +43,9 @@ public class GridParallelTest {
     }
 
     @Test
-    public void googleSearch() throws InterruptedException {
+    public void googleSearch() {
         driver.findElement(By.name("q")).sendKeys("tut.by");
         driver.findElementByName("btnK").click();
-
     }
 
     @Test
@@ -57,5 +53,4 @@ public class GridParallelTest {
         driver.findElementByPartialLinkText("Белорусский портал TUT.BY. Новости Беларуси и мира").click();
         Assert.assertTrue(true);
     }
-
 }
